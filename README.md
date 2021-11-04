@@ -18,7 +18,7 @@ Bu proje  tariflerin ve ürünlerin olduğu, 1 adet tarife ve en az 1 ürün ekl
 
 #### 6- MVC -> Bu katmanda ön yüz işlemlerimiz yapılmıştır.
 
-#### Projede .net Core mvc, c#, html, css, Javascript, jquery, ajax, entityframework, autofac ve Mssql teknolojileri kullanılmıştır.
+#### Projede .net Core altyapısı ile mvc, api, c#, html, css, Javascript, jquery, ajax, entityframework, autofac ve Mssql teknolojileri kullanılmıştır.
 
 
 
