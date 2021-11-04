@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewData["Title"] = "SchedulePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row mt-2">
+        <div class="col-12 justify-content-start">
+            <!--Tarife eklemek için modal açan buton-->
+            <input type="button" value="Tarife Ekle" id="btnModalAdd" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+        </div>
+    </div>
+
+    <!--Table Start-->
+    <div class="mt-2">
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>Id</td>
+                    <td>Tarife Adı</td>
+                    <td>KDV</td>
+                    <td>OİV</td>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+    <!--Table End-->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tarife Ekle</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!--Form Start-->
+                    <form id="AddScheduleForm" method="post" class="justify-content-center">
+                        <input type="hidden" value="" id="scheduleId" name="ScheduleId" />
+                        <div class=" d-flex flex-column input-group-sm">
+                            <label for="Name" class="fw-bold mt-1">Tarife Adı</label>
+                            <input type="text" class="form-control" name="Name" id="scheduleName" placeholder="Tarife Adı Giriniz" required
+                                   oninvalid="this.setCustomValidity('Tarife Adı Boş Olamaz')"
+                                   oninput="this.setCustomValidity('')" />
+
+                            <label class="fw-bold mt-1">KDV</label>
+                            <input type="text" class="form-control" name="KDV" id="scheduleKdv" placeholder="Örn(1-8-18)" pattern="[0-9]+([.][0-9]+)?" required
+                                   oninvalid="this.setCustomValidity('KDV 1 - 8 - 18 Değerlerinden Biri Olmalıdır')"
+                                   oninput="this.setCustomValidity('')" />
+
+                            <label class="fw-bold mt-1">ÖİV</label>
+                            <input type="text" class="form-control" name="OIV" id="scheduleOiv" placeholder="Örn(1-8-18)" pattern="[0-9]+([.][0-9]+)?" required
+                                   oninvalid="this.setCustomValidity('ÖİV 1 - 8 - 18 Değerlerinden Biri Olmalıdır')"
+                                   oninput="this.setCustomValidity('')" />
+
+                        </div>
+                        <!--Burada iki adet submit butonu var. 1. si Tarife eklemek için 2. si Tarife güncellemek için-->
+                        <div class="justify-content-center">
+                            <input type="submit" action="/Schedule/AddSchedule" id="btnAdd" value="Ekle" class="btn btn-outline-success bi bi-pencil-square mt-2" style="display:block;" />
+                            <input type="submit" action="/Schedule/UpdateSchedule" id="btnUpdate" value="Güncelle" class="btn btn-outline-success bi bi-pencil-square mt-2" style="display:none;" />
+
+                        </div>
+
+                    </form>
+                    <!--Form End-->
+                </div>
+            </div>
+        </div>
+
+        <!--End Modal-->
+    </div>
+
+</div>
+<script src="~/lib/jquery/jquery.min.js"></script>
+<link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="~/js/Schedule.js"></script>
+
+
+

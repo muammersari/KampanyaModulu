@@ -1,0 +1,143 @@
+﻿body {
+}
+
+.header {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    background-color: #0D112D;
+    color: #FFFFFF;
+}
+
+.leftMenu {
+    width: 300px;
+    position: fixed;
+    top: 50px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #6C94B8;
+    animation: animateleft .5s;
+    padding-bottom: 50px;
+}
+
+    .leftMenu ul li {
+        list-style: none;
+        background-color: #6C94B8;
+        color: #FFFFFF;
+    }
+
+
+
+        .leftMenu ul li:first-child i { /*Hoşgeldiniz ikonları*/
+            font-size: 18px;
+            color: #FFFFFF;
+        }
+
+            .leftMenu ul li:first-child i:hover { /*Hoşgeldiniz ikonları hover*/
+                transform: scale(1.2);
+                color: orange;
+            }
+
+        .leftMenu ul li:not(:nth-child(1)) { /*Sol menü madde mause pointer*/
+            cursor: pointer;
+        }
+
+        .leftMenu ul li div:first-child { /*Hoşgeldiniz Yazısı*/
+            color: #0D112D;
+        }
+
+.renderArea {
+    width: 100%;
+    height: auto;
+    min-height: 80%;
+    margin-top: 50px;
+    text-align: start;
+    background-color: #FFFFFF;
+}
+
+#btnMenu {
+    margin-left: 10px;
+}
+
+@media(min-width:1024px) { /*Bilgisayar - ipad pro*/
+    .leftMenu {
+        display: block !important;
+    }
+
+    .renderArea {
+        margin-left: 300px;
+    }
+
+    #btnMenu {
+        display: none;
+    }
+}
+
+@media(max-width:1023px) { /*telefon - ipad*/
+    .leftMenu {
+        display: none;
+    }
+
+    #btnMenu {
+        display: block;
+    }
+}
+
+@keyframes animateleft {
+    from {
+        left: -300px;
+        opacity: 0;
+    }
+
+    to {
+        left: 0;
+        opacity: 1
+    }
+}
+
+.logo {
+    margin-right: 20px;
+}
+
+.tabItemOption {
+    background-color: #3071E7;
+    font-size: 16px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 20px;
+}
+
+    .tabItemOption:hover {
+        transform: scale(0.95);
+        color: #0D112D;
+    }
+
+.tabItemHeader {
+    border-bottom: 0.5px dashed gray;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+    .tabItemHeader span {
+        color: #0D112D;
+        font-size: 13px;
+        padding-left: 10px;
+        font-weight: 600;
+    }
+
+
+.kaydirma_cubugu::-webkit-scrollbar {
+    width: 10px; /*genislik 10px olsun*/
+    background-color: #eaeaea; /*scrollbar arkaplan renk*/
+    border-left: 1px solid #f1f1f1; /*arkaplan sol tarafa cizgi cek*/
+    border-radius: 15px;
+}
+
+.kaydirma_cubugu::-webkit-scrollbar-thumb {
+    background-color: #a0a0a0; /*scrollbar renk*/
+    border-radius: 15px /*oval olsun*/
+}
+
+    .kaydirma_cubugu::-webkit-scrollbar-thumb:hover { /*tiklandiginda*/
+        background-color: #7d7d7d;
+    }
